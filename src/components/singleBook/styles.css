@@ -1,0 +1,31 @@
+.animated {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animated:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.title:hover {
+  color: rgb(0, 89, 255);
+}
+
+.comment-area-wrapper {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  bottom: 200px;
+}
+
+.single-book-wrapper {
+  position: relative;
+}
+
+.comment-area {
+  position: absolute;
+  width: 300px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  z-index: 10;
+  text-decoration: none;
+}
