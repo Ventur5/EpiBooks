@@ -23,9 +23,12 @@
 
 .comment-area {
   position: absolute;
+  right: 0;
   width: 300px;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   z-index: 10;
   text-decoration: none;
+  margin-top: 5px;
+  border-radius: 15px;
 }

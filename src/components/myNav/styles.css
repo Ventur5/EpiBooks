@@ -7,3 +7,21 @@
 .navItem:hover {
     transform: scale(1.08);
 }
+
+.theme-light {
+  background-color: white;
+  color: black;
+}
+.theme-dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.theme-dark .comment-area, .theme-dark .card,
+.theme-dark .container,
+.theme-dark .row {
+  background-color: rgb(44, 44, 44);
+  color: rgb(255, 255, 255);
+}
+
+

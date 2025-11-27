@@ -9,7 +9,7 @@ const CommentList = ({ comments, onDelete, onUpdate }) => {
       {comments.length > 0 ? (
         comments.map((c) => (
           <li key={c._id}>
-            <strong>{c.author}</strong>:{' '}
+            <strong>{c.author}</strong>:{" "}
             {editingId === c._id ? (
               <>
                 <input
@@ -30,7 +30,6 @@ const CommentList = ({ comments, onDelete, onUpdate }) => {
               <>
                 {c.comment} ⭐{c.rate}
                 <button
-                  style={{ marginLeft: "0.5rem" }}
                   onClick={() => {
                     setEditingId(c._id);
                     setEditedComment(c.comment);
@@ -39,7 +38,6 @@ const CommentList = ({ comments, onDelete, onUpdate }) => {
                   Modifica
                 </button>
                 <button
-                  style={{ marginLeft: "0.5rem" }}
                   onClick={() => onDelete(c._id)}
                 >
                   Elimina

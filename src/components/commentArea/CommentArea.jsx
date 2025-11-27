@@ -7,9 +7,9 @@ const CommentArea = ({ asin }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTI0NWYyMGRiYzJkODAwMTVmMDAxNjUiLCJpYXQiOjE3NjM5OTIzNTksImV4cCI6MTc2NTIwMTk1OX0.yKuqTqDq-BO0uzSHVUb7YxCyBkk8my9xev8Gb-IdGD0";
+  const TOKEN =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTI0NWYyMGRiYzJkODAwMTVmMDAxNjUiLCJpYXQiOjE3NjM5OTIzNTksImV4cCI6MTc2NTIwMTk1OX0.yKuqTqDq-BO0uzSHVUb7YxCyBkk8my9xev8Gb-IdGD0";
 
-  // FETCH COMMENTI
   useEffect(() => {
     if (!asin) return;
 
@@ -36,7 +36,6 @@ const CommentArea = ({ asin }) => {
     fetchComments();
   }, [asin]);
 
-  // DELETE COMMENT
   const deleteComment = async (id) => {
     try {
       const res = await fetch(
@@ -54,7 +53,6 @@ const CommentArea = ({ asin }) => {
     }
   };
 
-  // UPDATE COMMENT
   const updateComment = async (id, updatedData) => {
     try {
       const res = await fetch(

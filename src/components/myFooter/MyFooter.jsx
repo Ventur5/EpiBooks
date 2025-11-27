@@ -6,8 +6,12 @@ const MyFooter = () => {
       <div className="p-2 d-flex justify-content-between w-100">
         <p className="footer-item">© 2024 EpiBooks. All rights reserved.</p>
         <div className="d-flex gap-4">
-          <a href="#" className="footer-item">Take a look in store</a>
-          <a href="#" className="footer-item">Contct us</a>
+          <a href="#" className="footer-item">
+            Take a look in store
+          </a>
+          <a href="#" className="footer-item">
+            Contct us
+          </a>
         </div>
       </div>
     </footer>
