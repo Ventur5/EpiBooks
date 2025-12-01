@@ -1,34 +1,90 @@
-.animated {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.flip-card {
+  background-color: transparent;
+  width: 180px;
+  height: 280px;
+  perspective: 1000px;
+  margin: 1rem auto;
+  cursor: pointer;
 }
 
-.animated:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.title:hover {
-  color: rgb(0, 89, 255);
-}
-
-.comment-area-wrapper {
-  background-color: rgb(255, 255, 255);
+.flip-card-inner {
   position: relative;
-  bottom: 200px;
-}
-
-.single-book-wrapper {
-  position: relative;
-}
-
-.comment-area {
-  position: absolute;
-  right: 0;
-  width: 300px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  z-index: 10;
-  text-decoration: none;
-  margin-top: 5px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #fff;
+  padding: 1rem;
+}
+
+.flip-card-front img.card-img {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.flip-card-front:hover img.card-img {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.flip-card-front h5,
+.flip-card-back h5 {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.comment-sidebar {
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.comment-sidebar.visible {
+  transform: translateX(0);
+  opacity: 1;
 }

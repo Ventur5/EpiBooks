@@ -1,34 +1,23 @@
-import { useState } from "react";
-import Card from "react-bootstrap/Card";
+import { Badge } from "react-bootstrap";
 import "./styles.css";
-import CommentArea from "../commentArea/CommentArea";
 
-const SingleBook = ({ book }) => {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const toggleSelected = () => setIsSelected(!isSelected);
+const SingleBook = ({ book, setSelectedAsin, isSelected }) => {
+  const handleClick = () => {
+    setSelectedAsin(isSelected ? null : book.asin);
+  };
 
   return (
-    <div className="h-100 single-book-wrapper" style={{ marginBottom: "1rem" }}>
-      <Card
-        className="single-book-card h-100"
-        onClick={toggleSelected}
-        style={{
-          border: isSelected ? "3px solid red" : "1px solid lightgray",
-          cursor: "pointer",
-        }}
-      >
-        <Card.Img src={book.img} />
-        <Card.Body className="card-body">
-          <Card.Title className="title">{book.title}</Card.Title>
-        </Card.Body>
-      </Card>
-
-      {isSelected && (
-        <div className="comment-area">
-          <CommentArea asin={book.asin} />
+    <div className="flip-card" onClick={handleClick}>
+      <div className={`flip-card-inner ${isSelected ? "flipped" : ""}`}>
+        <div className="flip-card-front">
+          <img src={book.img} alt={book.title} className="card-img" />
+          <h5 className="card-title">{book.title}</h5>
         </div>
-      )}
+        <div className="flip-card-back">
+          <h5>{book.title}</h5>
+          <Badge className="badge" href="#">{book.price}$</Badge>
+        </div>
+      </div>
     </div>
   );
 };
