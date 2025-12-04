@@ -1,4 +1,5 @@
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 const MyNav = ({ searchTitle, setSearchTitle, theme, setTheme }) => {
   const toggleTheme = () => {
@@ -11,15 +12,15 @@ const MyNav = ({ searchTitle, setSearchTitle, theme, setTheme }) => {
         <h4>EpiBooks</h4>
 
         <div className="d-flex gap-4 align-items-center">
-          <a href="#" className="navItem">
+          <Link to="/" className="navItem">
             Home
-          </a>
-          <a href="#" className="navItem">
-            About
-          </a>
-          <a href="#" className="navItem">
-            Browse
-          </a>
+          </Link>
+          <Link to="/contact" className="navItem">
+            Contact
+          </Link>
+          <Link to="/aboutus" className="navItem">
+            About Us
+          </Link>
 
           <input
             type="text"

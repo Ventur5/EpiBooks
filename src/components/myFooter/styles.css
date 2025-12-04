@@ -1,8 +1,17 @@
 footer {
-    margin-top: 10rem;
+  margin-top: 10rem;
 }
 
 .footer-item {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.footer-item:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.secondaryImage {
+  border-radius: 15px;
 }

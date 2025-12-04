@@ -77,10 +77,10 @@ const CommentArea = ({ asin }) => {
   };
 
   return (
-    <div className="comment-area">
-      <h4>Commenti del libro</h4>
+    <div className="comment-area me-2">
+      <h4>Comments</h4>
 
-      {loading && <p>Caricamento in corso...</p>}
+      {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <CommentList

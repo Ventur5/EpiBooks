@@ -1,53 +1,25 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import HomePage from "./pages/homepages/HomePage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Contact from "./pages/contact/Contact";
+import AboutUs from "./pages/aboutUs/AboutUs";
+import NotFound from "./pages/notFound/NotFound";
+import BookDetails from "./pages/bookDetails/BookDetails";
 
-import MyNav from "./components/myNav/MyNav.jsx";
-import Welcome from "./components/welcome/Welcome.jsx";
-import AllTheBooks from "./components/allTheBooks/AllTheBooks.jsx";
-import CommentArea from "./components/commentArea/CommentArea.jsx";
-import MyFooter from "./components/MyFooter/MyFooter.jsx";
-
-function App() {
-  const [searchTitle, setSearchTitle] = useState("");
-  const [theme, setTheme] = useState("light");
-
-  const [selectedAsin, setSelectedAsin] = useState(null);
-
+const App = () => {
   return (
-    <div className={theme === "light" ? "theme-light" : "theme-dark"}>
-      <MyNav
-        searchTitle={searchTitle}
-        setSearchTitle={setSearchTitle}
-        theme={theme}
-        setTheme={setTheme}
-      />
+    <Router>
+      <Routes>
+        <Route index path="/" element={<HomePage />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/book/:asin" element={<BookDetails />} />
 
-      <Welcome />
-
-      <Container fluid className="mt-4">
-        <Row>
-          <Col md={8}>
-            <AllTheBooks
-              searchTitle={searchTitle}
-              setSelectedAsin={setSelectedAsin}
-              selectedAsin={selectedAsin}
-            />
-          </Col>
-
-          <Col md={4}>
-            <div className={`comment-sidebar ${selectedAsin ? "visible" : ""}`}>
-              {selectedAsin && <CommentArea asin={selectedAsin} />}
-            </div>
-          </Col>
-        </Row>
-      </Container>
-
-      <MyFooter />
-    </div>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "../singleBook/styles.css";
+import "../myNav/styles.css";
 
 const AddComment = ({ asin, updateComments, token }) => {
   const [comment, setComment] = useState("");
@@ -26,8 +28,7 @@ const AddComment = ({ asin, updateComments, token }) => {
         }
       );
 
-      if (!response.ok)
-        throw new Error("Errore nella POST del commento");
+      if (!response.ok) throw new Error("Errore nella POST del commento");
 
       const saved = await response.json();
 
@@ -41,12 +42,13 @@ const AddComment = ({ asin, updateComments, token }) => {
   };
 
   return (
-    <form onSubmit={sendComment} className="add-comment">
-      <h5>Aggiungi un commento</h5>
+    <form onSubmit={sendComment} className="add-comment me-2">
+      <h5 className="toggleTheme">Add your comment</h5>
 
       <input
+        className="input-comment"
         type="text"
-        placeholder="Scrivi un commento"
+        placeholder="Write here..."
         value={comment}
         onChange={(e) => setComment(e.target.value)}
         required
@@ -60,7 +62,9 @@ const AddComment = ({ asin, updateComments, token }) => {
         <option value="5">⭐⭐⭐⭐⭐</option>
       </select>
 
-      <button type="submit">Invia</button>
+      <button className="btn btn-info" type="submit">
+        Submit
+      </button>
     </form>
   );
 };

@@ -1,11 +1,21 @@
+html,
+body {
+  font-family: "Nata Sans", sans-serif;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+}
+
 .navItem {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    transition: transform 0.3 ease;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  transition: transform 0.3 ease;
 }
 
 .navItem:hover {
-    transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 .theme-light {
@@ -13,15 +23,35 @@
   color: black;
 }
 .theme-dark {
-  background-color: #1e1e1e;
+  background-color: #303030;
   color: rgb(255, 255, 255);
 }
 
-.theme-dark .comment-area, .theme-dark .card,
-.theme-dark .container,
-.theme-dark .row {
-  background-color: #1e1e1e;
+.theme-dark .comment-area,
+.theme-dark .card {
+  background-color: #303030;
   color: rgb(0, 0, 0);
 }
 
+.welcomeTitle {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.8rem;
+  color: rgb(255, 255, 255);
+}
 
+.imgHero {
+  height: 500px;
+  object-fit: cover;
+}
+
+.input-comment {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}

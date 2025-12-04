@@ -28,7 +28,7 @@
 }
 
 .comment-rate {
-  color: #f39c12;
+  color: #ff9d00;
   font-weight: bold;
 }
 
@@ -102,5 +102,4 @@
 .no-comments {
   text-align: center;
   color: #777;
-  font-style: italic;
 }

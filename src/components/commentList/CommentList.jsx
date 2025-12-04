@@ -67,7 +67,7 @@ const CommentList = ({ comments, onDelete, onUpdate }) => {
           </div>
         ))
       ) : (
-        <p className="no-comments">Nessun commento disponibile.</p>
+        <p className="no-comments">You can be the first to comment!</p>
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-import books from "./books/fantasy.json";
+import books from "./books/scifi.json";
 import SingleBook from "../singleBook/SingleBook.jsx";
 
 const AllTheBooks = ({ searchTitle, setSelectedAsin, selectedAsin }) => {
@@ -24,4 +24,3 @@ const AllTheBooks = ({ searchTitle, setSelectedAsin, selectedAsin }) => {
 };
 
 export default AllTheBooks;
-
